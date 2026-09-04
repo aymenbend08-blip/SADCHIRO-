@@ -2,33 +2,4 @@ import { Link } from "react-router-dom";
 import Container from "./Container";
 import { products } from "@/data/products";
 import { useI18n } from "../i18n";
-
-export default function Footer() {
-  const { t } = useI18n();
-  return (
-    <footer className="bg-pine text-ivory">
-      <Container className="py-16">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
-          <div className="flex flex-col gap-4 md:col-span-2">
-            <span className="text-lg font-semibold">SADCHIRO</span>
-            <p className="max-w-sm text-sm text-ivory/70 leading-relaxed">{t("footerText")}</p>
-          </div>
-          <div className="flex flex-col gap-3">
-            <span className="text-sm font-medium text-ivory/50">{t("products")}</span>
-            {products.map((product) => <Link key={product.slug} to={product.href} className="text-sm text-ivory/80 hover:text-ivory w-fit">{product.name}</Link>)}
-            <Link to="/products" className="text-sm text-ivory/80 hover:text-ivory w-fit">{t("allProducts")}</Link>
-          </div>
-          <div className="flex flex-col gap-3">
-            <span className="text-sm font-medium text-ivory/50">{t("company")}</span>
-            <Link to="/about" className="text-sm text-ivory/80 hover:text-ivory w-fit">{t("aboutCompany")}</Link>
-            <Link to="/contact" className="text-sm text-ivory/80 hover:text-ivory w-fit">{t("contactUs")}</Link>
-          </div>
-        </div>
-        <div className="mt-16 flex flex-col gap-4 border-t border-ivory/15 pt-6 text-xs text-ivory/50 md:flex-row md:items-center md:justify-between">
-          <span>© {new Date().getFullYear()} SADCHIRO. {t("rights")}</span>
-          <span>{t("algeria")}</span>
-        </div>
-      </Container>
-    </footer>
-  );
-}
+export default function Footer(){const {t,language}=useI18n();const ar=language==="ar";return <footer className="bg-pine text-ivory"><Container className="py-16"><div className="grid grid-cols-1 gap-12 md:grid-cols-4"><div className="flex flex-col gap-4 md:col-span-2"><span className="text-lg font-semibold">SADCHIRO</span><p className="max-w-sm text-sm text-ivory/70 leading-relaxed">{t("footerText")}</p></div><div className="flex flex-col gap-3"><span className="text-sm font-medium text-ivory/50">{t("products")}</span>{products.map(p=><Link key={p.slug} to={p.href} className="text-sm text-ivory/80 hover:text-ivory w-fit">{p.name}</Link>)}<Link to="/products" className="text-sm text-ivory/80 hover:text-ivory w-fit">{t("allProducts")}</Link></div><div className="flex flex-col gap-3"><span className="text-sm font-medium text-ivory/50">{t("company")}</span><Link to="/about" className="text-sm text-ivory/80 hover:text-ivory w-fit">{t("aboutCompany")}</Link><Link to="/contact" className="text-sm text-ivory/80 hover:text-ivory w-fit">{t("contactUs")}</Link><Link to="/privacy" className="text-sm text-ivory/80 hover:text-ivory w-fit">{ar?"الخصوصية":"Privacy"}</Link><Link to="/terms" className="text-sm text-ivory/80 hover:text-ivory w-fit">{ar?"الشروط":"Terms"}</Link></div></div><div className="mt-16 flex flex-col gap-4 border-t border-ivory/15 pt-6 text-xs text-ivory/50 md:flex-row md:items-center md:justify-between"><span>© {new Date().getFullYear()} SADCHIRO. {t("rights")}</span><span>{t("algeria")}</span></div></Container></footer>}
