@@ -1,50 +1,5 @@
 import ProductPageLayout from "@/components/ProductPageLayout";
 import { getProduct } from "@/data/products";
-
-const product = getProduct("suma")!;
-
-export default function Suma() {
-  return (
-    <ProductPageLayout
-      product={product}
-      whatItIs="SUMA is a practical technology product designed to simplify everyday commerce, helping stores manage and improve their daily operations."
-      problem="Many stores rely on manual processes and disconnected tools to run their day-to-day operations, which costs time and makes it harder to see what's actually happening in the business."
-      howItWorks={[
-        {
-          title: "Set up your store",
-          text: "[Placeholder — describe the onboarding process once defined.]",
-        },
-        {
-          title: "Run daily operations",
-          text: "[Placeholder — describe the core daily workflow SUMA supports.]",
-        },
-        {
-          title: "See what's improving",
-          text: "[Placeholder — describe how SUMA surfaces operational insight over time.]",
-        },
-      ]}
-      benefits={[
-        {
-          title: "Less manual work",
-          text: "[Placeholder — quantify or describe the time saved once available.]",
-        },
-        {
-          title: "Clearer daily operations",
-          text: "[Placeholder — describe the visibility SUMA gives store owners.]",
-        },
-      ]}
-      features={[
-        {
-          title: "[Feature name]",
-          text: "[Placeholder — add a specific SUMA feature once confirmed.]",
-        },
-        {
-          title: "[Feature name]",
-          text: "[Placeholder — add a specific SUMA feature once confirmed.]",
-        },
-      ]}
-      relationship="SUMA is built and maintained by SADCHIRO, following the same standard of simplicity and practicality applied across every SADCHIRO product."
-      ctaNote="Tell us about your store and we'll get back to you."
-    />
-  );
-}
+import { useI18n } from "@/i18n";
+const product=getProduct("suma")!;
+export default function Suma(){const ar=useI18n().language==="ar";return <ProductPageLayout product={{...product,statusLabel:ar?"متاح":"Available"}} whatItIs={ar?"SUMA منصة عملية للتجارة اليومية تساعد المحلات على إدارة المنتجات والأسعار والباركود وسير العمل من مكان واحد.":"SUMA is a practical commerce platform that helps stores manage products, prices, barcodes and daily workflows from one place."} problem={ar?"تعتمد الكثير من المحلات على عمليات يدوية وأدوات منفصلة، مما يضيّع الوقت ويجعل متابعة الأسعار والمنتجات والعمل اليومي أصعب.":"Many stores rely on manual processes and disconnected tools, wasting time and making products, prices and daily operations harder to manage."} howItWorks={ar?[{title:"إعداد المحل",text:"أنشئ بيانات المحل وأضف المنتجات والأسعار والباركودات التي تحتاجها."},{title:"إدارة العمل اليومي",text:"استخدم الهاتف أو النظام المتصل لإدارة الأسعار والمنتجات وسير العمل اليومي بصورة أبسط."},{title:"التوسع والربط",text:"يتجه SUMA إلى ربط أدوات المحل والـPOS والطباعة والمزامنة ضمن منظومة واحدة."}]:[{title:"Set up your store",text:"Create your store profile and add the products, prices and barcodes you need."},{title:"Run daily operations",text:"Use the connected tools to manage products, pricing and daily workflows more simply."},{title:"Connect and scale",text:"SUMA is designed to connect store tools, POS systems, printing and synchronization into one ecosystem."}]} benefits={ar?[{title:"عمل يدوي أقل",text:"تنظيم المعلومات والعمليات المتكررة في نظام واحد واضح."},{title:"تحكم أوضح",text:"الوصول إلى المنتجات والأسعار وسير العمل اليومي بصورة أكثر تنظيمًا."}]:[{title:"Less manual work",text:"Keep recurring information and workflows organized in one clear system."},{title:"Clearer control",text:"Keep products, pricing and daily workflows easier to understand and manage."}]} features={ar?[{title:"المنتجات والباركود",text:"إدارة المنتجات وربطها بالباركود والأسعار."},{title:"الربط والمزامنة",text:"بنية قابلة للربط مع أنظمة المتاجر وأدوات الطباعة والمزامنة."}]:[{title:"Products and barcodes",text:"Manage products and connect them to barcodes and pricing."},{title:"Connections and sync",text:"A foundation designed for store-system integrations, printing and synchronization."}]} relationship={ar?"SUMA منتج من SADCHIRO، ويُبنى ليكون طبقة عملية تربط احتياجات المحل اليومية بالتقنية دون تعقيد غير ضروري.":"SUMA is a SADCHIRO product, built as a practical layer connecting everyday store needs with technology without unnecessary complexity."} ctaNote={ar?"أخبرنا عن محلك وما تريد تحسينه.":"Tell us about your store and what you want to improve."}/>}
