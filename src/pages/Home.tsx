@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 import ProductCard from "@/components/ProductCard";
-import { products } from "@/data/products";
+import { products } from "@/data/products";\nimport { useI18n } from "@/i18n";
 
 const approach = [
   {
@@ -31,7 +31,7 @@ export default function Home() {
           <div className="flex flex-col gap-6 md:col-span-7">
             <span className="text-sm font-medium text-clay">SADCHIRO</span>
             <h1 className="text-4xl leading-tight text-pine md:text-6xl md:leading-tight">
-              A technology company building products for real-world problems.
+              {t("heroTitle")}
             </h1>
             <p className="max-w-lg text-lg text-charcoal/70 leading-relaxed">
               SADCHIRO designs practical, scalable digital products, starting
@@ -40,10 +40,10 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <Button to="/products" variant="primary">
-                Explore Products
+                {t("explore")}
               </Button>
               <Button to="/about" variant="secondary">
-                About SADCHIRO
+                {t("aboutCompany")}
               </Button>
             </div>
           </div>
@@ -147,12 +147,12 @@ export default function Home() {
         <Container className="flex flex-col items-start gap-6 py-16 md:flex-row md:items-center md:justify-between md:py-24">
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl md:text-3xl font-medium text-pine">
-              Have a question, or want to work with us?
+              {isArabic ? "هل لديك سؤال أو تريد العمل معنا؟" : "Have a question, or want to work with us?"}
             </h2>
-            <p className="text-charcoal/70">We read every message.</p>
+            <p className="text-charcoal/70">{isArabic ? "نقرأ كل رسالة تصلنا." : "We read every message."}</p>
           </div>
           <Button to="/contact" variant="primary">
-            Get in touch
+            {isArabic ? "تواصل معنا" : "Get in touch"}
           </Button>
         </Container>
       </section>
