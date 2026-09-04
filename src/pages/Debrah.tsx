@@ -1,50 +1,5 @@
 import ProductPageLayout from "@/components/ProductPageLayout";
 import { getProduct } from "@/data/products";
-
-const product = getProduct("debrah")!;
-
-export default function Debrah() {
-  return (
-    <ProductPageLayout
-      product={product}
-      whatItIs="Debrah is a SADCHIRO digital product currently in development, presented here as part of the SADCHIRO product ecosystem."
-      problem="[Placeholder — the specific problem Debrah addresses will be added as the product takes shape.]"
-      howItWorks={[
-        {
-          title: "[Step name]",
-          text: "[Placeholder — Debrah's workflow will be described here once defined.]",
-        },
-        {
-          title: "[Step name]",
-          text: "[Placeholder — Debrah's workflow will be described here once defined.]",
-        },
-        {
-          title: "[Step name]",
-          text: "[Placeholder — Debrah's workflow will be described here once defined.]",
-        },
-      ]}
-      benefits={[
-        {
-          title: "[Benefit]",
-          text: "[Placeholder — main benefits will be added as Debrah develops.]",
-        },
-        {
-          title: "[Benefit]",
-          text: "[Placeholder — main benefits will be added as Debrah develops.]",
-        },
-      ]}
-      features={[
-        {
-          title: "[Feature name]",
-          text: "[Placeholder — key features will be added as Debrah develops.]",
-        },
-        {
-          title: "[Feature name]",
-          text: "[Placeholder — key features will be added as Debrah develops.]",
-        },
-      ]}
-      relationship="Debrah is developed under SADCHIRO, sharing the same foundation and standards as the rest of the product ecosystem."
-      ctaNote="Want early updates on Debrah? Reach out and let us know."
-    />
-  );
-}
+import { useI18n } from "@/i18n";
+const product=getProduct("debrah")!;
+export default function Debrah(){const ar=useI18n().language==="ar";return <ProductPageLayout product={{...product,statusLabel:ar?"قيد التطوير":"In development"}} whatItIs={ar?"Debrah منتج رقمي من منظومة SADCHIRO ما يزال قيد التطوير، ونبنيه تدريجيًا حول احتياج حقيقي قبل الإعلان عن تفاصيله النهائية.":"Debrah is a SADCHIRO digital product in development. We are shaping it around a real need before publishing its final product details."} problem={ar?"نحن لا نريد تقديم منتج بتفاصيل تسويقية قبل أن تتضح المشكلة والحل وتجربة الاستخدام. لذلك نختبر ونبني قبل الوعود.":"We do not want to publish marketing claims before the problem, solution and user experience are clear. We build and validate before making promises."} howItWorks={ar?[{title:"فهم الاحتياج",text:"نبدأ بتحديد المشكلة والسياق الذي يحتاج المنتج إلى تحسينه."},{title:"بناء واختبار",text:"نطوّر المنتج تدريجيًا ونختبر ما هو مفيد فعلًا."},{title:"إطلاق مدروس",text:"عندما يصبح المنتج جاهزًا، سنعلن عن تفاصيله واستخدامه بوضوح."}]:[{title:"Understand the need",text:"We start by defining the problem and context the product should improve."},{title:"Build and test",text:"We develop the product incrementally and test what is genuinely useful."},{title:"Launch deliberately",text:"When the product is ready, we will publish its details and use case clearly."}]} benefits={ar?[{title:"وضوح قبل الإطلاق",text:"لا نعد بما لم يتم اختباره بعد."},{title:"منتج ينمو مع المستخدم",text:"التطوير مرتبط بما نتعلمه أثناء البناء والاستخدام."}]:[{title:"Clarity before launch",text:"We do not promise what has not been tested yet."},{title:"A product that grows with users",text:"Development follows what we learn while building and testing."}]} features={ar?[{title:"قيد التطوير",text:"التفاصيل النهائية للمنتج ستُنشر عند جاهزية النسخة المناسبة."},{title:"جزء من منظومة SADCHIRO",text:"Debrah يُبنى تحت نفس معايير البساطة والجودة في الشركة."}]:[{title:"In development",text:"Final product details will be published when the right version is ready."},{title:"Part of SADCHIRO",text:"Debrah is built under the same standards of simplicity and quality."}]} relationship={ar?"Debrah منتج من SADCHIRO، وسنترك المنتج نفسه يحدد هويته وقيمته بدل ملء الصفحة بوعود غير مؤكدة.":"Debrah is a SADCHIRO product. We will let the product define its identity and value rather than fill the page with unverified promises."} ctaNote={ar?"إذا أردت معرفة آخر التطورات، تواصل معنا.":"Want early updates? Reach out and let us know."}/>}
