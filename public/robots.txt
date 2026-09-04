@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sadchiro3.sadchiro.workers.dev/sitemap.xml
